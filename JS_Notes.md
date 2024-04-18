@@ -177,7 +177,7 @@ after memory allocation completion code execution get started
 firstly var z will have value 10 instead of undefined and it will reflect in memory allocation later we x() function execution so local execution context will be created inside code execution block and inside callstack on top of the GEC(which is at bootom of call stack) x will be pushed
 and same process of memory allocation and code execution is happen in function x local context and when its done x will be pop out of the call stack. same for y.
 ```
-PASSING FUNCTION INSIDE FUNCTION or RETURN FUNCTION FROM FUNCTION CALLED AS FIRST CLASS FUNCTIONS.
+PASSING FUNCTION INSIDE FUNCTION or RETURN FUNCTION FROM FUNCTION CALLED AS FIRST CLASS FUNCTIONS.AND IT TREATED LIKE A VARIABLE.
 
 IIFE(Immediately invoked function expression) are also called as self invoking function.This is use for data privacy
 
@@ -251,5 +251,39 @@ to get minimum and maximum value we have 2 functions called as Math.min and Math
 
 we mostly use for of loop for array looping
 
+HIGHER ORDER FUNCTION-
+It is a function which take function as parameter  or return function
 
+function y(x){
+    x();
+}
+x->x is a callback function
+y-> y is a higher order function
+
+
+MAP- 
+it will change content o array but create new array
+
+```
+const arr=[1,2,3,4,5];
+
+function square(x){
+    return x*x;
+}
+const squaredArray=arr.map(square);
+```
+FILTER- Filter out elements based on condition
+
+EVERY-
+it returns TRUE if all elements satisfies the condition
+
+SOME-Even if single element satisfies the condition it returns true
+
+FIND- It will return the first element which satisfies the condition
+
+FINDLAST-It will return the last element which satisfies the condition
+
+FINDINDEX-It will return the index 
+
+FINDLASTINDEX- It will return last index
 
