@@ -139,3 +139,39 @@ TEMPORAL DEAD ZONE-
 let and const can only be used after initialization i.e. they cannot be hoisted
 
 let and const stay in temporal dead zone till the value is initialise to them
+
+FUNCTION-
+As compare to global variable local variable have higher priority
+
+```
+INSIDE STUFF:
+
+In GEC(Global Execution Context) two areas are there
+
+1.Memory Allocation
+
+2.Code Execution
+
+lets take example
+
+var z=10;
+x();
+y();
+console.log(z);
+function x(){
+    var z=20;
+    console.log(z);
+}
+function y(){
+    var z=30;
+    console.log(z);
+}
+
+in this firstly z gets memeory allocation having value undefined later function x(){} will have memory allocation
+later function y(){} will have memory allocation
+
+after memory allocation completion code execution get started
+
+firstly var z will have value 10 instead of undefined and it will reflect in memory allocation later we x() function execution so local execution context will be created inside code execution block and inside callstack on top of the GEC(which is at bootom of call stack) x will be pushed
+and same process of memory allocation and code execution is happen in function x local context and when its done x will be pop out of the call stack. same for y.
+```
