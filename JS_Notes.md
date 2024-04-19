@@ -287,3 +287,153 @@ FINDINDEX-It will return the index
 
 FINDLASTINDEX- It will return last index
 
+OOPs
+======================================
+Object is basically collection of properties and methods
+
+const user={}
+
+this is called as object literal
+
+```
+const user={
+    name:["John","Bob"],
+    age:23,
+    printDetails:function(){
+        console.log("Details of users");
+    },
+    greet:function(){
+        conole.log("Greetings!");
+    }
+}
+methods->any function inside object
+properties->it is key in object like name,age,etc.
+```
+You can access the object using . notation or []
+
+user[name]="Alice new" or user.name="Alice new"
+
+you can add new property
+
+user.hobby=["Singing","Gaming"];
+
+CLASS- 
+
+Class is basically template from which multiple template can be created
+
+INHERITANCE-
+
+Child class will have all characteristics of its parent class + it have its own methods
+
+```
+class VIPCustomer extends customer{
+    constructor(name,email,vipLevel){
+        super(name,email), // to call constructor of parent class
+        this.vipLevel=vipLevel;
+    }
+
+    updateVIPLevel(level){
+        this.vipLevel=level;
+    }
+}
+```
+and you can call this using
+```
+const vipCustomer=new VIPCustomer("Alice","qwerty@gmail.com","Gold");
+```
+Child class can inherit all the methods of parent class
+
+
+THIS Keyword
+========================================
+
+In function this keyword points to global object,
+
+But in strict mode ,this keyword becomes undefined
+
+If you are calling the function from object then value of this will be object
+
+CALL,APPLY,BIND
+========================================
+These methods use for function sharing
+
+```
+const user={
+    firstname:"Saurabh",
+    lastname:"Kobarne",
+    printfullname:function(){
+        console.log(`Hi! My name is ${this.firstname} ${this.lastname}`);
+    }
+}
+```
+if i want to print the full name i can do it like this
+```
+user.printfullname();
+
+```
+and suppose there is second user 
+```
+const user2={
+    firstname:"Mark",
+    lastname:"Zukku",
+}
+```
+I cant use printfullName method
+
+so to do that we have call
+
+```
+user.printfullName.call(user2)
+```
+or you can make function generic
+
+```
+ printfullname:function(){
+        console.log(`Hi! My name is ${this.firstname} ${this.lastname}`);
+    }
+
+and do it like this
+
+printfullname.call(user);
+printfullname.call(user2);
+```
+APPLY-
+In apply we can pass parameter in array
+```
+printfullname.apply(user,["red","orange"])
+```
+Arrow function does not have their own this
+
+
+PROTOTYPE
+============================
+First JS Engine checks for that value inside that object if its not there it checks for prototype and object property can shadow the protype property
+
+All properties of object can be inherited to another object by using prototype
+
+Lets take a example
+```
+const parent={
+    a:10,
+    b:20,
+    sum:function(){
+        console.log(this.a+this.b);
+    }
+}
+const child={
+    c:30,
+    d:40,
+    multiply:function(){
+        console.log(this.c+this.d);
+    }
+}
+
+so to inherit all the properties of parent object change the prototype of child to parent
+
+child.__proto__=parent;
+```
+DOM(Document Object Model)
+====================================
+Its root node is Document
+
+and its a tree like structure
