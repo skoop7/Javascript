@@ -437,3 +437,106 @@ DOM(Document Object Model)
 Its root node is Document
 
 and its a tree like structure
+
+To print the content we use InnerHTML
+
+To add a class using JS we use classList.add("");
+
+To insert any element before any element we use inssertbefore
+
+but to use this you need to appendchild before it
+```
+parent.insertBefore=(newpara,existingpara);
+```
+
+To remove element we use 
+```
+.remove() method
+```
+
+ASYNCHRONOUS PROGRAMMING
+=========================================
+Instead of waiting for one task to complete before moving to the next one ,the program can start multiple tasks and come back to them later once they are done.
+
+Asynchronous programming grants multitasking superpower to code.
+
+JS is synchronous single threaded language
+
+setTimeout is webAPI which executes after certain time
+
+Whatever function taking time is sent to the browser instead of call stack ,and browser executes it behind the scene and once it completes it ,completed task get push to callback queue and then callback queue will check wheather call stack is empty or not and then it pushes it to call stack
+
+Wahtever promises are there ,they are pput in microstack queue .it have higher priority than callback queue.
+
+CALLBACK-
+
+function passed as an argument to another function.
+
+PROMISES-
+
+Promises are mechanismfor handling asynchrous task without blocking the program execution flow.
+
+
+JAVASCRIPT RUNTIME ENVIRONMENT-
+=====================================
+
+environment in which js runs/executed
+
+it consist of mainly these things-
+
+1.JS Engine- it is use to execute JS code having callstack and other things
+
+2.Web API- Browser/NodeJS providing API like setTimeout ,localstorage,etc
+
+3.callback Queue
+
+4.Microtask Queue
+
+5.Event loop
+
+JS ENGINE
+====================================
+
+It is simple program written in low level language,which converts JS code into Machine Code.
+
+Execution phses are like 
+
+1.code
+
+2.parse - It converts the code into tree like structure called as Abstract syntax tree 
+
+3.compiled-
+
+4.Execution
+
+IS JS INTERPRETED LANGUAGE OR COMPILED LANGUAGE?
+->IT DEPENDS ON HOW YOUR JS IS EXECUTING EG. V8 ENGINE USE JIT(Just in Time) compilation (combination of compiler and interpreter)
+
+
+BROWSER OBJECT MODEL
+======================================
+There are several object given by browser such as Document buyt there are some addtional object such as alert,confirm,prompt
+
+location is also object to redirct to the url
+
+
+LOCAL STORAGE
+======================
+It is use to store object inside browser
+
+length will give number of key value pairs present inside localstorage
+
+SESSION STORAGE
+==============================
+Its key value pair does not reflect in another tab or another sesssion like localstorage
+
+some methods are -
+
+1.setItem
+
+2.getItem
+
+3.removeItem
+
+4.clear - To clear all data from local or session storage
+
