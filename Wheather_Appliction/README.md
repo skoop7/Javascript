@@ -7,7 +7,7 @@ A simple web application to display current weather and forecast data for cities
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/yourusername/weather-app.git
+git clone https://github.com/skoop7/Javascript.git
 
 ```
 
